@@ -1,0 +1,21 @@
+{
+    "name": "xbot/laravel-utils",
+    "description": "Utility libraries for laravel development.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Donie Leigh",
+            "email": "donie.leigh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.5.9",
+    },
+    "autoload": {
+        "psr-4": {
+            "Ox3f\\LaravelUtils\\": "src/"
+        }
+    },
+}
