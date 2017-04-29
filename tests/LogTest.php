@@ -76,6 +76,9 @@ class LogTest extends TestCase
 
         Log::saveOutput(2);
 
+        Request::shouldReceive('path')
+            ->once()
+            ->andReturn('api/user');
         LaravelLog::shouldReceive('error')
             ->once()
             ->with('jim | api/user | this is an error');
