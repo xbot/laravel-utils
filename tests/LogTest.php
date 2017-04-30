@@ -20,6 +20,13 @@ function debug_backtrace() {
 
 class LogTest extends TestCase
 {
+    public function setUp()
+    {
+        Auth::shouldReceive('user')
+            ->once()
+            ->andReturn((object)['name' => 'jim',]);
+    }
+
     /**
      * @covers Ox3f\LaravelUtils\Log\Log::saveInput
      * @covers Ox3f\LaravelUtils\Log\Log::saveOutput
@@ -31,10 +38,6 @@ class LogTest extends TestCase
     public function testAll()
     {
         global $calledInController;
-
-        Auth::shouldReceive('user')
-            ->once()
-            ->andReturn((object)['name' => 'jim',]);
 
         // test being called in a plain method
         $calledInController = false;
@@ -82,6 +85,7 @@ class LogTest extends TestCase
         LaravelLog::shouldReceive('error')
             ->once()
             ->with('jim | api/user | this is an error');
+
         Log::error('this is an error');
         
         $this->assertEquals(0, 0);
