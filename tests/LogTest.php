@@ -27,14 +27,6 @@ class LogTest extends TestCase
             ->andReturn((object)['name' => 'jim',]);
     }
 
-    /**
-     * @covers Ox3f\LaravelUtils\Log\Log::saveInput
-     * @covers Ox3f\LaravelUtils\Log\Log::saveOutput
-     * @covers Ox3f\LaravelUtils\Log\Log::parseCallStack
-     * @covers Ox3f\LaravelUtils\Log\Log::getInstance
-     * @covers Ox3f\LaravelUtils\Log\Log::__construct
-     * @covers Ox3f\LaravelUtils\Log\Log::__callStatic
-     */
     public function testAll()
     {
         global $calledInController;
